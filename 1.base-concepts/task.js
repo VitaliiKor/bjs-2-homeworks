@@ -33,7 +33,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) { // percen
 	
 	
 	monthlyPayment = S * (P + P / (((1 + P)**n) - 1));
-	totalAmount = monthlyPayment*n;
+	totalAmount = (monthlyPayment*n).toFixed(2);
 
   return totalAmount;
 }

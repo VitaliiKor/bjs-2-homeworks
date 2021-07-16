@@ -1,3 +1,5 @@
+'use strict'
+
 function solveEquation(a, b, c) {
   let arr;
   let D, x, x1, x2;

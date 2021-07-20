@@ -28,12 +28,15 @@ function calculateTotalMortgage(percent, contribution, amount, date) { // percen
 	start_date = new Date(); //Date right now
 	end_date = new Date(new Date(date)); //Date of end of loan
 	n = (end_date.getFullYear() - start_date.getFullYear())*12 + (end_date.getMonth() - start_date.getMonth())
-
-		
-	
-	
 	monthlyPayment = S * (P + P / (((1 + P)**n) - 1));
 	totalAmount = (monthlyPayment*n).toFixed(2);
-
-  return totalAmount;
+	if (isNaN(percent)){
+		return alert (`Параметр ${percent} содержит неправильное значение "Процентная ставка"`)
+	} else if (isNaN(contribution)){
+		return alert (`Параметр ${contribution} содержит неправильное значение "Начальный взнос"`)
+	} else if (isNaN(amount)){
+		return alert (`Параметр ${amount} содержит неправильное значение "Сумма кредита"`)
+	} else {
+		return totalAmount;
+	}
 }

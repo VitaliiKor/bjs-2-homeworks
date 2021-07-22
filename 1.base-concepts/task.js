@@ -24,13 +24,13 @@ function calculateTotalMortgage(percent, contribution, amount, date) { // percen
 										//P - 1/12 процентной ставки (от 0 до 1), n - количество месяцев ипотеки, ^ - возведение в степень
 										// totalAmount - общая стоимость ипотеки
 	if (isNaN(percent)){
-		return alert (`Параметр "Процентная ставка" содержит неправильное значение "${percent}"`)
+		return (`Параметр "Процентная ставка" содержит неправильное значение "${percent}"`)
 	}
 	if (isNaN(contribution)){
-		return alert (`Параметр "Начальный взнос" содержит неправильное значение "${contribution}"`)
+		return (`Параметр "Начальный взнос" содержит неправильное значение "${contribution}"`)
 	}
 	if (isNaN(amount)){
-		return alert (`Параметр "Общая стоимость" содержит неправильное значение "${amount}"`)
+		return (`Параметр "Сумма кредита" содержит неправильное значение "${amount}"`)
 	}
 	S = amount - contribution;
 	P = percent/12/100;
@@ -39,14 +39,5 @@ function calculateTotalMortgage(percent, contribution, amount, date) { // percen
 	n = (end_date.getFullYear() - start_date.getFullYear())*12 + (end_date.getMonth() - start_date.getMonth())
 	monthlyPayment = S * (P + P / (((1 + P)**n) - 1));
 	totalAmount = Number((monthlyPayment*n).toFixed(2));
-/*	if (isNaN(percent)){
-		return alert (`Параметр ${percent} содержит неправильное значение "Процентная ставка"`)
-	} else if (isNaN(contribution)){
-		return alert (`Параметр ${contribution} содержит неправильное значение "Начальный взнос"`)
-	} else if (isNaN(amount)){
-		return alert (`Параметр ${amount} содержит неправильное значение "Сумма кредита"`)
-	} else {
-		return totalAmount;
-	}*/
 	return totalAmount;
 }

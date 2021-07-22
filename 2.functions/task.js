@@ -1,8 +1,23 @@
 // Задание 1
 function getArrayParams(arr) {
   let min,max,sum,avg;
+  min = 100;
+  max = -100;
+  sum = 0;
+  
+  for (j=0; j<arr.length; j++){
+	  if (arr[j]<min) {
+		  min=arr[j];
+	  }
+	  if (arr[j]>max){
+		  max=arr[j];
+	  }
+  }
 
-  // Ваш код
+    for (j=0; j<arr.length; j++) {
+		sum += arr[j];
+	}
+	avg = (sum/arr.length).toFixed(2);
 
   return { min:min, max:max, avg:avg };
 }

@@ -13,4 +13,3 @@ function advancedFilter(arr) {
   // return resultArr; // array
 	return arr.filter((number) => number % 3 === 0).filter((number) => number > 0).map((number) => number * 10);
 }
-

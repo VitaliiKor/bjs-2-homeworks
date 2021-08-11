@@ -1,10 +1,10 @@
-let student1 = new Student("Tony", "male", 37);
+let student1 = new Student("Tony", "male", 17);
 student1.setSubject("Algebra");
 student1.addMark(5);
 student1.addMark(4);
 student1.addMark(5);
 
-let student2 = new Student("Buzz", "female", 35);
+let student2 = new Student("Buzz", "female", 19);
 student2.setSubject("Geometry");
 student2.addMark(2);
 student2.addMark(3);

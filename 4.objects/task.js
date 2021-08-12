@@ -21,13 +21,14 @@ Student.prototype.addMarks = function (... mark) {
 }
 
 Student.prototype.getAverage = function () {
-  let average, sum;
-  for (let i = 0; i < marks.length; i++){
-  sum += marks[i];
-  average = sum/(marks.length);
+  let average = 0, sum = 0;
+  for (let i of marks){
+  sum += i;
   }
+  average = sum/(marks.length);
   return average;
 }
+
 
 Student.prototype.excludeStudent = function (reason) {
   this.reason = reason;

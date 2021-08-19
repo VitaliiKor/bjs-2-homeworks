@@ -1,3 +1,5 @@
 .idea
 .DS_Store
 .vscode
+id_rsa
+id_rsa.pub

@@ -15,3 +15,4 @@ console.log(student1);
 console.log(student2);
 console.log(student1.getAverage())
 console.log(student2.getAverage());
+console.log(student2.addMarks());

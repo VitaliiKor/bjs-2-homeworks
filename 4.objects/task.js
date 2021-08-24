@@ -37,5 +37,5 @@ Student.prototype.exclude = function (reason) {
   if (this.excluded = "low grades"){
   delete Student.marks;
   delete Student.subject;
+  }
 }
-

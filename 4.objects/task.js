@@ -30,13 +30,13 @@ Student.prototype.getAverage = function () {
   for (let i of this.marks){
   sum += i;
   }
-  return average = sum/(this.marks.length);
+  return average = (sum/(this.marks.length)).toFixed(4);
 }
 
 Student.prototype.exclude = function (reason) {
   this.excluded = reason;
   if (this.excluded = "low grades"){
-  delete Student.marks;
-  delete Student.subject;
+  delete this.marks;
+  delete this.subject;
   }
 }

@@ -10,6 +10,7 @@ class PrintEditionItem {
 		state = 1,5 * state;
 	}
 	set state(number){
+		let state;
 		if (this.state(number) < 0) {
 			state = 0;
 		}

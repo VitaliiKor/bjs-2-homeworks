@@ -13,14 +13,14 @@ class PrintEditionItem {
 		if (this.state(number) < 0) {
 			state = 0;
 		}
-		else if (this.state(number) > 0) {
+		else if (this._state(number) > 0) {
 			state = 100;
 		}
 		else {
-			state = this.state;
+			state = this._state;
 		}
 	}
-	get state(number){
+	get state(){
 		return state;
 	}
 }

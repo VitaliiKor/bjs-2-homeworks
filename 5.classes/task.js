@@ -7,31 +7,31 @@ class PrintEditionItem {
 		this.type = null;
 	}
 	fix(){
-		state = 1,5 * state;
+		this.state = 1,5 * this.state;
 	}
+
 	set state(number){
-		let state;
-		if (this.state(number) < 0) {
-			state = 0;
+		if (number < 0) {
+			this.realState = 0;
 		}
-		else if (this._state(number) > 0) {
-			state = 100;
+		else if (number > 100) {
+			this.realState = 100;
 		}
 		else {
-			state = this._state;
+			this.realState = number;
 		}
 	}
 	get state(){
-		return state;
+		return this.realState;
 	}
 }
 
-class Magazine extends PrintEditionItem {}
+//class Magazine extends PrintEditionItem {};
 
-class Book extends PrintEditionItem {}
+// class Book extends PrintEditionItem {};
 
-class NovelBook extends Book {}
+//class NovelBook extends Book {};
 
-class FantasticBook extends Book {}
+//class FantasticBook extends Book {};
 
-class DetectiveBook extends Book {}
+//class DetectiveBook extends Book {};

@@ -7,7 +7,7 @@ class PrintEditionItem {
 		this.type = null;
 	}
 	fix(){
-		return this.state = 1,5 * this.state;
+		return this.state = 1.5 * this.state;
 	}
 
 	set state(number){

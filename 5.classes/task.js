@@ -63,23 +63,78 @@ class DetectiveBook extends Book {
 };
 
 class Library {
-	constructor(name) {
-		this.name = name;
-		this.books = [];
-	}
-	
-	addBook(book){
-//book, magazine, novel, fantastic, detective
-		if (this.state>30){
-			this.books.push(book_);
-		}
-	}
-	
-	findBookBy(type, value){
-		
-	}
-	
-	giveBookByName(bookName){
-		
-	}
+    constructor(name) {
+        this.name = name;
+        this.books = [];
+    }
+
+    addBook(book) {
+        if (book.state > 30) {
+            this.books.push(book);
+        }
+    }
+
+    findBookBy(type, value) {
+        for (let i = 0; i < this.books.length; i++) {
+            if (this.books[i][type] === value) return this.books[i];
+        }
+        return null;
+    }
+
+    giveBookByName(bookName) {
+        let book = this.books.find(b => b.name === bookName);
+        if (book) {
+            let index = this.books.indexOf(book);
+            if (index > -1) {
+                this.books.splice(index, 1);
+            }
+            return book;
+        }
+        return null;
+    }
+}
+
+class Student {
+    constructor(name) {
+        this.name = name;
+        this.subjects = [];
+    }
+
+    addMark(mark, subject) {
+        if (mark < 1 || mark > 5) {
+            return 'Ошибка, оценка должна быть числом от 1 до 5';
+        }
+        let reference = this.subjects.find(b => b.subject === subject);
+        if (!reference) {
+            let item = {subject, marks: [mark]};
+            this.subjects.push(item);
+        } else {
+            reference.marks.push(mark);
+        }
+    }
+
+    getAverageBySubject(subject) {
+        let subj = this.subjects.find(b => b.subject === subject);
+        if (subj) {
+            if (subj.marks) {
+                let length = subj.marks.length;
+                let sum = 0;
+                for (let i = 0; i < length; i++) {
+                    sum += subj.marks[i];
+                }
+                return sum / length;
+            }
+        }
+        return 'Нет такой книги';
+    }
+
+    getAverage() {
+        let total = this.subjects.map(b => this.getAverageBySubject(b.subject));
+        let totalSum = total.reduce((sum, current) => sum + current, 0);
+        return totalSum / total.length;
+    }
+
+    exclude(reason) {
+        this.excluded = reason;
+    }
 }

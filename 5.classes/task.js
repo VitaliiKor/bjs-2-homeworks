@@ -125,7 +125,7 @@ class Student {
                 return sum / length;
             }
         }
-        return 'Нет такой книги';
+        return 'Несуществующий предмет';
     }
 
     getAverage() {

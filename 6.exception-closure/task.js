@@ -1,14 +1,17 @@
-let parseCount = (val) => {
-	if (Number.isNaN(Number.parseInt(5*val, 10))) throw "Невалидное значение";
-	return (Number.parseInt(val));
+function parseCount(val) {
+    let result = Number.parseInt(val);
+    if (isNaN(result)) {
+        throw new Error('Невалидное значение');
+    }
+    return result;
 }
 
-function validateCount() {
-	try {parseCount(val)
-	return parseCount(val);
-	} catch(e){
-	return console.log('Ошибка ' + e); // Вернуть ошибку
-	}
+function validateCount(val) {
+    try {
+        return parseCount(val);
+    } catch (e) {
+        return e;
+    }
 }
 
 class Triangle {
@@ -17,25 +20,27 @@ class Triangle {
 		this.b = b;
 		this.c = c;
 		if (this.a + this.b < this.c || this.a + this.c < this.b || this.c + this.b < this.a){
-				return (console.log("Треугольник с такими сторонами не существует"));
+			throw new Error ('Треугольник с такими сторонами не существует');
 		}
-	
 	}
 		
 	getPerimeter(){
-		if (this.a + this.b > this.c & this.a + this.c > this.b & this.c + this.b > this.a){
-			return (console.log('Периметр треугольника = ' + (this.a+this.b+this.c) + ' единиц'));
-		} else {
-			return (console.log ("Треугольника с такими сторонами не существует"))
-		}
+		return (console.log('Периметр треугольника = ' + (this.a+this.b+this.c) + ' единиц'));
 	}
 	
 	getArea(){
 		let p = 0.5*(this.a+this.b+this.c);
-		if (this.a + this.b > this.c & this.a + this.c > this.b & this.c + this.b > this.a){
 		return(console.log('Площадь треугольника = ' + (Math.sqrt (p*(p-this.a)*(p-this.b)*(p-this.c))).toFixed(3) + ' квадратных единиц'));
-		} else {
-			return (console.log ("Треугольничка с такими сторонами не существует"))
-		}
 	}
+}
+
+function getTriangle(a, b, c) {
+    try {
+        return new Triangle(a, b, c);
+    } catch (e) {
+        return new class Object2Methods {
+            getArea = () => 'Ошибка! Треугольник не существует';
+            getPerimeter = () => 'Ошибка! Треугольник не существует';
+        }
+    }
 }

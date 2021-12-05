@@ -25,12 +25,12 @@ class Triangle {
 	}
 		
 	getPerimeter(){
-		return (console.log('Периметр треугольника = ' + (this.a+this.b+this.c) + ' единиц'));
+		return (/*console.log('Периметр треугольника = ' + (*/this.a+this.b+this.c/*) + ' единиц')*/);
 	}
 	
 	getArea(){
 		let p = 0.5*(this.a+this.b+this.c);
-		return(console.log('Площадь треугольника = ' + (Math.sqrt (p*(p-this.a)*(p-this.b)*(p-this.c))).toFixed(3) + ' квадратных единиц'));
+		return/*(console.log('Площадь треугольника = ' + (*/+(Math.sqrt (p*(p-this.a)*(p-this.b)*(p-this.c))).toFixed(3)/*) + ' квадратных единиц'))*/;
 	}
 }
 
